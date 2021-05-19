@@ -1,0 +1,25 @@
+When figuring out what bugs the code had I first 
+ran the tester to figure what test failed.
+Afterward, I set specific breakpoints in the ArraySet 
+class in line 81 where something caused the compiler to 
+return a NoSuchElementException error. After stepping into
+each line of code, I noticed that in the add (T element) method
+the array was never going through the next segment of the array.
+The rear variable was never increased by one, so after adding the 
+line of code in line 60 of the ArraySet class the compiler stopped 
+throwing a NoSuchElementException error. 
+The second bug I found was an error that caused the array index to be
+out of bounds which caused an outOfBoundsException when running the
+tester. This was caused by the variable decreasing outside of the if statement 
+within the T Remove method. After adding breakpoint around the T Remove, 
+I decided to moved the rear-- from its place after the null check at
+line 85 of ArraySet to line 72. This fixed the problem of the T Remove method 
+causingOutOfBoundExceptions when it tried to look for values outside the range
+of the array.
+The last bug I found was at the very start of the ArraySet class. This was found 
+using the step into function which helps me notice that once the program calls for
+the isEmpty() it would return with an error. This was because it was originally set
+as rear>0. The problem with that was that it was not checking if the rear variable was
+empty so because each cycle ends with rear set to zero, the test would always fail.
+
+ 

@@ -1,0 +1,75 @@
+****************
+* Double-linked List
+* CS221-1
+* November 16, 2018
+* Cesar Delgado
+**************** 
+
+	OVERVIEW:
+
+	To create a double linked list implementation of IndexedUnsortedList interface
+	and a fully functional iterator that implements the ListIterator interface.
+
+
+	INCLUDED FILES:
+
+	* IndexedUnsortedList.java - Interface for an Iterable, Indexed, Unsorted List ADT. 
+	* IUDoubleLinkedList.java - Class that implements the IndexedUnsortedList interface using a node-based data structure. 
+	* ListTester.java - Test suite that checks for the correct functionality of IUDoubleLinkedList class.
+	* Node.java - A simple node class for IUDoubleLinkedList.
+	* README - this file
+	
+	COMPILING AND RUNNING:
+
+	From the directory containing all source files, compile the
+	driver class (and all dependencies) with the command:
+		$ javac ListTester.java
+		
+	Run the compiled class file with the command:
+		$ java ListTester.java
+		
+	Console output will give the results of the test suite for the IUDoubleLinkedList class.
+	
+	PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+	
+	In this project, we were tasked to create a double linked list using a node-based data structure that implements 
+	the IndexedUnsortedList interface under the a class named IUDoubleLinkedList. I was also tasked to expand my test 
+	suite to ensure the correct functionality of my UIDoubleLinkedList class. I also needed to implement more test 
+	scenarios for the ListTester class to test whether my list iterator methods under the UIDoubleLinkedList class
+	are working as intended.
+	
+	
+	TESTING:
+	
+	The UIDoubleLinkedList class was tested using a test suite class called ListTester. In this test suite class,
+	the program runs a series of testing change scenarios by constructing a "new empty list" using UIDoubleLinkedList,
+	which implements the IndexedUnsortedList interface. The ListTester class creates and tests the UIDoubleLinkedList 
+	class for specific change scenarios to check if the classes methods are working as intended. These include whether the class 
+	is working correctly from an empty list up to a three element list. It also checks after calling a ListIterator method to run such as 
+	add(), remove(), and set() would produce the result we were expecting to happen. A more extensive list of all the 
+	change scenarios that were added are under the provided change scenarios text file for this project.  
+	
+	Thankfully, through the ListTester class I was able to find various bugs that kept appearing during the process of building
+	my DLLiterator set(T e) method. One of the problems I kept facing was that my set method kept failing in my concurrency tests. The reason
+	that my test kept failing was of a simple mistake of forgetting to increment my modCount as well as my iterModcount. Another mistake on the
+	same method was that I never check first whether my iterModCount matched with my modCount before checking if my last returned was a null or not.
+	Thanks to the test suite, these simple mistakes that might of cause me hours of debugging to solve were minimized thanks to it showing me where 
+	and why each scenario failed by setting breakpoint and seeing when my iterModCount missed matched with modCount.
+	
+	
+	DISCUSSION:
+	
+	This assignment was really challenging and complicated to visualize unless you drew each scenario to have a clear illustration of what was happening
+	in each scenario. Some of the concepts where easier to understand when doing this because I was able to go through each scenario step by step with my
+	drawing. I felt that the single linked list assignment helped me get a better understanding for this assignment in how to tackle these type of problems.
+	In terms of testing for this assignment, I feel that there could have been more things that I could have tested for if I had more time to test. I feel that
+	even with the amount of test I have now, I am still not confident that I have the sufficient amount test to check for a possibility I never thought about.
+	
+	
+	
+--------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+	
+	
+	
